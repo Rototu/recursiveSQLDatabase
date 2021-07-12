@@ -13,9 +13,11 @@ SELECT * INTO n FROM t;
 
 I have provided two ways of execution for them (a straightforward algorithm, "StandardDB", and an optimised one, "RecursiveDB"). 
 
+The engine can be customised from the `config.js` file, where different parameters can be changed (details in file).
+
 The exact type of syntax that can be parsed can be seen in the `dataset\query1.txt`, `dataset\query2.txt` and `dataset\queryOrdered.txt` files . No other keywords than those is the example files are supported, but tables can have any number of columns and the recursive instruction can have any number of comparison operations. 
 
-To see how to use the the db engine, take a look at `index.js` in the root folder.
+To see how to use the the db engine and how to write your own benchmarks, take a look at `index.js`, `graphBenchmark.js` and `orderedBenchmark.js` in the root folder.
 
 ## Assumptions
 
@@ -71,7 +73,7 @@ Run the following command
 npm run order
 ```
 
-Important: the *scales* variable in the __config.js__ file will 
+Important: the *scales* variable in the `config.js` file will 
 represent the number of entries generated, not a percentage.
 
 ## How to view generated plots
