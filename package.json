@@ -1,0 +1,28 @@
+{
+  "name": "dsi-exam",
+  "version": "1.0.0",
+  "description": "DSI Exam 2021",
+  "main": "index.js",
+  "scripts": {
+    "benchmark": "PORT=8991 NODE_ENV=production node index.js",
+    "prof": "NODE_ENV=production node --prof index.js",
+    "graph": "PORT=8991 NODE_ENV=production node graphBenchmark.js",
+    "order": "PORT=8991 NODE_ENV=production node orderedBenchmark.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.22.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "deep-equal": "^2.0.5",
+    "fastpriorityqueue": "^0.7.1",
+    "hashmap": "^2.4.0",
+    "lru-cache": "^6.0.0",
+    "minimist": "^1.2.5",
+    "nanoid": "^3.1.22",
+    "nodeplotlib": "^0.7.3",
+    "performance-now": "^2.1.0"
+  }
+}

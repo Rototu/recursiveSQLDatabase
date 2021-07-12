@@ -1,0 +1,22 @@
+WITH RECURSIVE t(c1,c2) AS (
+  SELECT * FROM a
+  UNION
+  SELECT a.c1,t.c2 FROM a, t WHERE a.c2 = t.c1
+)
+SELECT * INTO a2 FROM t;
+
+
+WITH RECURSIVE t(c1,c2) AS (
+  SELECT * FROM b
+  UNION
+  SELECT t.c1,a2.c2 FROM a2, t WHERE t.c2 = a2.c1
+)
+SELECT * INTO b2 FROM t;
+
+
+WITH RECURSIVE t(c1,c2) AS (
+  SELECT * FROM c
+  UNION
+  SELECT t.c1,b2.c2 FROM b2, t WHERE t.c2 = b2.c1
+)
+SELECT * INTO c2 FROM t;

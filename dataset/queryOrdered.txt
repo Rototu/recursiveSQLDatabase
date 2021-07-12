@@ -1,0 +1,6 @@
+WITH RECURSIVE t(c1, c2) AS (
+  SELECT * FROM a
+  UNION
+  SELECT a.c1, t.c2 FROM a, t WHERE t.c1 > a.c2 AND t.c2 > t.c1 AND a.c2 > a.c1
+)
+SELECT * INTO n FROM t;

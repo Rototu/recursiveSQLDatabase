@@ -1,0 +1,6 @@
+WITH RECURSIVE t(c1,c2) AS (
+  SELECT * FROM g
+  UNION
+  SELECT g.c1,t.c2 FROM g, t WHERE g.c2 > t.c1
+)
+SELECT * INTO paths FROM t;
